@@ -54,3 +54,17 @@ python manage.py shell
 from listings.models import Listing
 list(Listing.objects.values_list('title', flat=True))
 ```
+# ALX Travel App API
+
+## Features
+- CRUD for Listings
+- CRUD for Bookings
+- Swagger API Documentation
+
+## Setup
+```bash
+git clone https://github.com/Chuksugo/alx_travel_app_0x01.git
+cd alx_travel_app_0x01
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
