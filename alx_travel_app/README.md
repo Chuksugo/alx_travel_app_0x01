@@ -1,0 +1,56 @@
+# ALX Travel App 0x00
+
+A simple Django project for managing travel listings, bookings, and reviews. Includes models, serializers, and a database seeder to populate sample data.
+
+## Features
+
+* **Listings**: Manage travel properties.
+* **Bookings**: Record user bookings for listings.
+* **Reviews**: Add user reviews for listings.
+* **Database Seeder**: Populate the database with sample listings.
+
+## Setup
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Chuksugo/alx_travel_app_0x00.git
+cd alx_travel_app_0x00/alx_travel_app
+```
+
+2. Create a virtual environment and activate it.
+3. Install dependencies:
+
+```bash
+pip install -r requirement.txt
+```
+
+4. Create a `.env` file in the inner `alx_travel_app` folder with your `SECRET_KEY` and MySQL database credentials.
+
+## Database
+
+Run migrations to create tables:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+Seed the database with sample listings:
+
+```bash
+python manage.py seed
+```
+
+## Usage
+
+Open the Django shell to query data:
+
+```bash
+python manage.py shell
+```
+
+```python
+from listings.models import Listing
+list(Listing.objects.values_list('title', flat=True))
+```
